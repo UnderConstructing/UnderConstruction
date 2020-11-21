@@ -1,0 +1,24 @@
+{
+  "name": "UnderConstruction",
+  "version": "1.0.0",
+  "description": "We're working on it",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UnderConstructing/UnderConstruction.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UnderConstructing/UnderConstruction/issues"
+  },
+  "homepage": "https://github.com/UnderConstructing/UnderConstruction#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
