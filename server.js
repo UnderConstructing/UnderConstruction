@@ -8,7 +8,9 @@ app.use(express.json());
 
 const exhbs = require('express-handlebars');
 app.engine("handlebars", exhbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars")
+app.set("view engine", "handlebars");
+
+app.use(require('./controllers'));
 
 app.listen(PORT, function () {
   console.log("listening at port " + PORT);
