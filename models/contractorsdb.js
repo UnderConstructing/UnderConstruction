@@ -1,3 +1,4 @@
+
 module.exports = function (sequelize, DataTypes) {
     var contractorsdb = sequelize.define("contractorsdb", {
         id: { 
@@ -16,4 +17,5 @@ module.exports = function (sequelize, DataTypes) {
         }
     })
     return contractorsdb
+
 } 
