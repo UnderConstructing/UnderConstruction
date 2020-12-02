@@ -1,12 +1,14 @@
-$("#button").on("click", function () {
-    $(".title").append("JQUERY WORKS")
+$("#submission").on("click", function (e) {
+    e.preventDefault();
+    var updateContractor = {
+        email: $("#request-text").val().trim()
+    }
+    $.ajax({
+        url: `/api/update`, 
+        method: "PUT",
+        data: updateContractor
+    }).then(response => {
+        console.log(response)
+    }) 
+
 })
-
-let requestOject = {
-    name: null
-    email: null
-}
-
-requestOject.name = $("#nameDiv")
-
-console.log(requestOject)

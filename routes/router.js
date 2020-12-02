@@ -7,7 +7,6 @@
 //         res.render("index");
 //     })
 // }
-
 =======
 const db = require("../models")
 
@@ -16,4 +15,5 @@ module.exports = function (app) {
              res.render("index.handlebars", contractorsDB) 
             })
 }
->>>>>>> 20ce6d1033f49cd646d0b115fa392d71ad35c0ae
+>>>>>>> 7d498bc7fb46b8df7880650bcdf75a801de1a63b
+
