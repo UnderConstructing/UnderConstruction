@@ -1,4 +1,3 @@
-<<<<<<< HEAD
     <section class="hero is-warning hero is-bold is-large">
         <div class="hero-body">
             <div class="container">
@@ -54,6 +53,16 @@
                         </div>
                     </div>
                 </div>
+            <div>
+                <textarea id="request-text" cols="30" rows="10"></textarea>
+                <button id="submission">Submit</button>
+            </div>
+            <br>
+            <div>
+                {{#each contractors}}
+                <p style="color: rgb(31, 19, 19);">{{dataValues.email}}</p>
+                {{/each}}
+            </div>
         </div>
         </div>
         </div>
@@ -73,9 +82,3 @@
         <p><a href="results.html">Find your project information.</a></p>
         </form>
     </section>
-=======
-<h1>FRUSTRATED</h1>
-<div>
-    {{contractordb}}
-</div>
->>>>>>> 20ce6d1033f49cd646d0b115fa392d71ad35c0ae
