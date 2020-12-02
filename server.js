@@ -8,6 +8,7 @@ const db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+<<<<<<< HEAD
 app.use(express.static("public"));
 
 
@@ -29,6 +30,9 @@ app.get("/api/new", function (req, res) {
   }).then(() => {
   res.json()
 })})
+=======
+app.use(routes)
+>>>>>>> 7d498bc7fb46b8df7880650bcdf75a801de1a63b
 
 // app.get("/api/deletecontractor", function (req, res) {
 //   db.contractorsdb.create({
@@ -38,7 +42,12 @@ app.get("/api/new", function (req, res) {
 //   res.json()
 // })})
 
+<<<<<<< HEAD
   db.sequelize.sync({ force: false }).then(function() {
+=======
+
+  db.sequelize.sync({ force: true }).then(function() {
+>>>>>>> 7d498bc7fb46b8df7880650bcdf75a801de1a63b
     app.listen(PORT, function() {
       console.log("App listening on PORT " + PORT);
     });
