@@ -8,7 +8,6 @@ const db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-<<<<<<< HEAD
 app.use(express.static("public"));
 
 
@@ -17,60 +16,40 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 // app.use(routes)
 
-// app.get("/", function (req, res) {
-//   res.render("index");
-// })
+app.get("/", function (req, res) {
+  res.render("index");
+})
+app.get("/results", function (req,res) {
+  res.render("results")
+})
 
-app.get("/api/new", function (req, res) {
-  db.contractorsdb.create({
-    company: "company",
-    email: "jimcontractor@contractor.com",
-    city: "Cleveland",
-    con_state: "Ohio",
-  }).then(() => {
-  res.json()
-})})
-=======
-app.use(routes)
->>>>>>> 7d498bc7fb46b8df7880650bcdf75a801de1a63b
-
-// app.get("/api/deletecontractor", function (req, res) {
-//   db.contractorsdb.create({
-//     contractor_name: "Jim Contractor", 
-//     email: "jimcontractor@contractor.com"
+// app.get("/api/newcontractor", function (req, res) {
+//   db.contractors.create({
+//     company: "Stone and Grain",
+//     email: "​Estone.grain@gmail.com",
+//     city: "Cleveland",
+//     con_state: "Ohio",
+//     phone: "330-289-6325"
 //   }).then(() => {
 //   res.json()
-// })})
+// })}) 
 
-<<<<<<< HEAD
-  db.sequelize.sync({ force: false }).then(function() {
-=======
 
-  db.sequelize.sync({ force: true }).then(function() {
->>>>>>> 7d498bc7fb46b8df7880650bcdf75a801de1a63b
-    app.listen(PORT, function() {
-      console.log("App listening on PORT " + PORT);
-    });
-  });
-
-  db.contractorsdb.create({
-    company: "company",
-    email: "jimcontractor@contractor.com",
-    city: "Cleveland",
-    con_state: "Ohio",
-})
-  app.put("/api/update", function (req, res) {
-    console.log("route hit")
-    db.contractorsdb.update({email: req.body.email}, {where: {id: 1}})
-    .then(dbcontractor => {
-      res.json(dbcontractor)
+  app.get("/results", function (req, res) {
+    const project = req.body.project
+    db.contractors.findAll({
+      attributes: {
+        city: req.body.city
+      }
+    }).then(dbcontractors => {
+      console.log(project)
+      res.render("results", {
+        project: project,
+        results: true,
+        contractors: dbcontractors})
     })
   })
-app.get("/", function (req, res) {
-  console.log("hit")
-  db.contractorsdb.findAll({})
-  .then(dbcontractor => {
-    console.log(dbcontractor)
-    res.render("index", {contractors: dbcontractor})
-  })
-})
+  
+db.sequelize.sync({ force: false }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT)})})
