@@ -1,2 +1,2 @@
-DROP DATABASE contractors_db;
-CREATE DATABASE contractors_db;
+Use contractors_db
+INSERT INTO contractors_db ()

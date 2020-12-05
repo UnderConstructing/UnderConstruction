@@ -1,8 +1,9 @@
-const db = require("../models")
+// const db = require("../models")
+// const path = require("path")
 
-module.exports = function (app) {
-    app.get("/", function (req, res) {
-             res.render("index.handlebars", contractorsDB) 
-            })
-}
+// module.exports = function (app) {
+//     app.get("/", function (req, res) {
+//         res.render("index");
+//     })
+// }
 
