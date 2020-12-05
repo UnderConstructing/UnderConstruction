@@ -1,6 +1,6 @@
 
 module.exports = function (sequelize, DataTypes) {
-    var contractorsdb = sequelize.define("contractorsdb", {
+    var contractorsdb = sequelize.define("contractors", {
         company: {
             type:DataTypes.STRING,
             allowNull: false
