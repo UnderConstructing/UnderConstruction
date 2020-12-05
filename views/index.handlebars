@@ -1,62 +1,59 @@
-    <section class="hero is-warning hero is-bold is-large">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    UNDER CONSTRUCTION
-                </h1>
-                <h2 class="subtitle">
-                    Have a home improvement project but don't know where to start? We've got your back!
-                </h2>
-            </div>
-            <select class="select" id="city">
-                <option>In which city you located?</option>
-                <option>Cleveland</option>
-                <option>Pittsburgh</option>
-            </select>
-            <select name="state" id="state" class="select">
-                <option>Which state are you in?</option>
-                <option>Ohio</option>
-                <option>Pennsylvania</option>
-            </select>
-            <select id="project" class="select">
-                <option>What project are you trying to remodel?</option>
-                <option>KITCHEN</option>
-                <option>BATHROOM</option>
-                <option>BEDROOM</option>
-                <option>Table</option>
-            </select>
-            <div>
-                <button id="submission">Submit</button>
-            </div>
-            <br>
-            <div>
-                {{#if results}}
-                {{#each contractors}}
-                <p style="color: rgb(31, 19, 19); font-size:large;">{{dataValues.email}}</p>
-                {{/each}}
-                {{/if}}
-            </div>
+<section class="hero is-warning hero is-bold is-large">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                UNDER CONSTRUCTION
+            </h1>
+            <h2 class="subtitle">
+                Have a home improvement project but don't know where to start? We've got your back!
+            </h2>
         </div>
+        <select class="select" id="city">
+            <option>In which city you located?</option>
+            <option>Cleveland</option>
+            <option>Pittsburgh</option>
+        </select>
+        <select name="state" id="state" class="select">
+            <option>Which state are you in?</option>
+            <option>Ohio</option>
+            <option>Pennsylvania</option>
+        </select>
+        <select id="project" class="select">z
+            <option>What project are you trying to remodel?</option>
+            <option>KITCHEN</option>
+            <option>BATHROOM</option>
+            <option>BEDROOM</option>
+            <option>Table</option>
+        </select>
+        <div>
+            <a href="/results"><button id="submission">Submit</button></a>
         </div>
+        <br>
+        <div>
+            {{#each contractors}}
+            <p style="color: rgb(31, 19, 19); font-size:large;">{{dataValues.company}}</p>
+            {{/each}}
+
         </div>
-        </nav>
-        
-        <p><a href="results.html">Find your project information.</a></p>
-        </form>
-    </section>
+    </div>
+    </div>
+    </div>
+    </nav>
+    </form>
+</section>
 
 <div class="modal" id="validate">
 
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Not so fast!</p>
-      <button class="delete" aria-label="close"></button>
-    </header>
-    <section class="modal-card-body">
-        <p>You need to make sure you select a city, state, and project.</p>
-    </section>
-    <footer class="modal-card-foot">
-      <button class="button is-success" id="close-modal">Got it!</button>
-    </footer>
-  </div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Not so fast!</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <p>You need to make sure you select a city, state, and project.</p>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success" id="close-modal">Got it!</button>
+        </footer>
+    </div>
 </div>

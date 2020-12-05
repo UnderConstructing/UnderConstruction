@@ -19,9 +19,9 @@ app.set("view engine", "handlebars");
 app.get("/", function (req, res) {
   res.render("index");
 })
-app.get("/results", function (req,res) {
-  res.render("results")
-})
+// app.get("/results", function (req,res) {
+//   res.render("results")
+// })
 
 // app.get("/api/newcontractor", function (req, res) {
 //   db.contractors.create({
@@ -35,21 +35,23 @@ app.get("/results", function (req,res) {
 // })}) 
 
 
-  app.get("/results", function (req, res) {
-    const project = req.body.project
-    db.contractors.findAll({
+  app.get("/results",  (req, res) => {
+     db.contractors.findAll({
       attributes: {
-        city: req.body.city
+        city: req.query.city
       }
-    }).then(dbcontractors => {
-      console.log(project)
-      res.render("results", {
-        project: project,
-        results: true,
-        contractors: dbcontractors})
+    }).then(result => {
+      console.log(result)
+      res.render("results", {contractors: result})
     })
-  })
+    .catch(error => console.error(error))
+    })
   
+  // app.post('/results', (req, res) => {
+  //   let c = req.query.city
+  //   // let contractors = db.contractors;
+
+
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT)})})

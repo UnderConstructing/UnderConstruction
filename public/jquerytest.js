@@ -10,7 +10,6 @@ $("#submission").on("click", function () {
     }
     var cleCon = {
         city: $("#city").val(),
-        project: $("#project").val()
     }
     $.ajax({
         url: "/results",
@@ -18,7 +17,6 @@ $("#submission").on("click", function () {
         data: cleCon
     }).then(response => {
         console.log(response)
-        window.location.replace("/results");
     })
 
 })
