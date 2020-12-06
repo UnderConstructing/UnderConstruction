@@ -20,14 +20,35 @@ $("#submission").on("click", function () {
     })
 
 })
-
+$("#incrementer").on("click", function() {
+    incrementer += 1;
+})
 $("#lenders").on("click", function () {
     $.ajax({
         url: "/lenders",
         method: "GET"
     }).then(response =>{
         console.log(response)
+        console.log(incrementer)
     } )
+})
+
+$("#submit-contractor").on("click", function () {
+    let reqObj = {
+        company: $("#inputCompany").val(),
+        email: $("#inputEmail").val(),
+        city: $("#inputCity").val(),
+        state: $("#inputState").val(),
+        phone: $("#inputPhone").val(),
+    }
+    $.ajax({
+        url: "/api/newcontractor",
+        method: "POST",
+        data: reqObj
+    }).then(function () {
+        console.log("posted!")
+        $("#posted").removeClass("d-none")
+    })
 })
 
 $("#close-modal").on("click", function () {
