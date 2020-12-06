@@ -20,6 +20,16 @@ $("#submission").on("click", function () {
     })
 
 })
+
+$("#lenders").on("click", function () {
+    $.ajax({
+        url: "/lenders",
+        method: "GET"
+    }).then(response =>{
+        console.log(response)
+    } )
+})
+
 $("#close-modal").on("click", function () {
     closeModal()
 })
