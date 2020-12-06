@@ -1,34 +1,36 @@
-<section class="hero is-warning hero is-bold is-large">
+<section class="hero is-bold is-large is-fullheight">
+    <div class="container1">
+        <h1 class="title">
+            UNDER CONSTRUCTION
+        </h1>
+        <h2 class="subtitle">
+            Have a home improvement project but don't know where to start? We've got your back!
+        </h2>
+        <div class="irrelevant">
+            <div class="selectors">
+                <select class="select" id="city">
+                    <option disabled selected>In which city are you located?</option>
+                    <option value="Cleveland">Cleveland</option>
+                    <option value="Pittsburgh">Pittsburgh</option>
+                </select>
+                <select name="state" id="state" class="select">
+                    <option disabled selected>What state are you in?</option>
+                    <option value="Ohio">Ohio</option>
+                    <option value="Pennsylvania">Pennsylvania</option>
+                </select>
+                <select id="project" class="select">
+                    <option disabled selected>What is your project?</option>
+                    <option value="Kitchen">Kitchen</option>
+                    <option value="Bathroom">Bathroom</option>
+                    <option value="Bedroom">Bedroom</option>
+                </select>
+                <div class="" id="results-button">
+                    <a href="/results"><button id="submission">Get Help!</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="hero-body">
-        <div class="container">
-            <h1 class="title">
-                UNDER CONSTRUCTION
-            </h1>
-            <h2 class="subtitle">
-                Have a home improvement project but don't know where to start? We've got your back!
-            </h2>
-        </div>
-        <select class="select" id="city">
-            <option>In which city you located?</option>
-            <option>Cleveland</option>
-            <option>Pittsburgh</option>
-        </select>
-        <select name="state" id="state" class="select">
-            <option>Which state are you in?</option>
-            <option>Ohio</option>
-            <option>Pennsylvania</option>
-        </select>
-        <select id="project" class="select">z
-            <option>What project are you trying to remodel?</option>
-            <option>KITCHEN</option>
-            <option>BATHROOM</option>
-            <option>BEDROOM</option>
-            <option>Table</option>
-        </select>
-        <div>
-            <a href="/results"><button id="submission">Submit</button></a>
-        </div>
-        <br>
         <div>
             {{#each contractors}}
             <p style="color: rgb(31, 19, 19); font-size:large;">{{dataValues.company}}</p>
