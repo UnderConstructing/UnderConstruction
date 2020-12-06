@@ -1,0 +1,48 @@
+.body-class{
+    width: 100vw;
+    height: 100vh;
+}
+.hero{
+    background-image: url("/images/construction2.jpg");  
+    max-width: 100%;
+    max-height: 100%;
+    background-size: cover;
+}
+.title{
+position: relative;
+  left: 1px;
+  top: 1px;
+  font-size: 50px;
+  font-family: 'Saira Stencil One', cursive;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: aliceblue;
+}
+
+.subtitle{
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: aliceblue;
+}
+
+.irrelevant{
+    display: flex;
+    justify-content: center;
+}
+.container1{
+    margin: 0 auto;
+}
+
+#results-button{
+    margin-left:3.5em;
+    margin-top: 2em;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.select{
+    color: white;
+    background-color: black;
+}
