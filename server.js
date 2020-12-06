@@ -6,7 +6,7 @@ const result = dotenv.config()
 if (result.error) {
   throw result.error
 }
-const PORT = process.env.JAWSDB_URL || 8080;
+const PORT = process.env.PORT || 8080;
 
 const exphbs = require("express-handlebars")
 const db = require("./models");
