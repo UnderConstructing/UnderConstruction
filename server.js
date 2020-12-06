@@ -6,8 +6,9 @@ const result = dotenv.config()
 if (result.error) {
   throw result.error
 }
+//DON'T FUCKING TOUCH THIS!!!!//
 const PORT = process.env.PORT || 8080;
-
+//SERIOUSLY//
 const exphbs = require("express-handlebars")
 const db = require("./models");
 
