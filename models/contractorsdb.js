@@ -19,6 +19,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         phone: {
             type: DataTypes.STRING,
+            allowNull: false
         }
     })
     return contractorsdb
