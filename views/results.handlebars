@@ -1,18 +1,22 @@
-<h1>So you are remodeling your...</h1>
-<div>
-    <p id="projectId">{{project}}</p>
-    <p id="projectResults">
+<div class="results-page">
+    <h1 class="remodel">So you are remodeling your...</h1>
+    <div>
+        <p class="project-style" id="projectId">{{project}}</p>
+        <p class="remodel-style" id="projectResults">
 
-    </p>
-</div>
+        </p>
+    </div>
     <br>
     {{#each contractors}}
-    <p>{{company}}</p>
-    <ol>
-        <li>{{email}}</li>
-        <li>{{phone}}</li>
-    </ol>
-</div>
+
+    <div class="resultsStyle">
+        <p>{{company}}</p>
+        <ol>
+            <li>{{email}}</li>
+            <li>{{phone}}</li>
+        </ol>
+
+    </div>
     {{/each}}
     <div id="lender-button">
         <div class="lender">
@@ -24,6 +28,8 @@
         </div>
 
     </div>
+</div>
+</div>
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
