@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 8080;
 //SERIOUSLY//
 const exphbs = require("express-handlebars")
 const db = require("./models");
+const { response } = require("express");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -59,10 +60,10 @@ app.get("/api/results", function (req, res) {
         },
         raw: true
   }).then(results => {
-    console.log("results" + results)
+    console.log("results" + JSON.stringify(results))
     contractorsRender = results
     project = req.query.project
-    console.log(project)
+    console.log(contractorsRender)
     res.redirect(resultURL, 200)
     console.log("CONTRACTORS " + JSON.stringify(contractorsRender))
   })
@@ -89,7 +90,8 @@ app.post("/api/newcontractor", function (req, res) {
     city: req.body.city,
     con_state: req.body.state,
     phone: req.body.phone
-  }).then(()=> {
+  }).then(response=> {
+    console.log(response)
     res.json()
   })
 })
