@@ -43,6 +43,12 @@ $("#submit-contractor").on("click", function () {
         state: $("#inputState").val(),
         phone: $("#inputPhone").val(),
     }
+    if ($(".valid").val() === "") {
+        openModal()
+        return
+    }
+
+    else if ($("#inputState").val()==='Choose...')
     $.ajax({
         url: "/api/newcontractor",
         method: "POST",
