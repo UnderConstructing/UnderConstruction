@@ -46,6 +46,9 @@ position: relative;
     color: white;
     background-color: black;
 }
+#posted{
+  display:none;
+}
 .remodel{
     position: relative;
   left: 1px;

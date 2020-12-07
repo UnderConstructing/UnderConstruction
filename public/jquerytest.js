@@ -42,6 +42,7 @@ $("#lenders").on("click", function () {
 })
 //comment//
 $("#submit-contractor").on("click", function () {
+    $("#posted").css("display", "block")
     let reqObj = {
         company: $("#inputCompany").val(),
         email: $("#inputEmail").val(),
@@ -66,7 +67,7 @@ $("#submit-contractor").on("click", function () {
             data: reqObj
         }).then((response) => {
             console.log("posted!" + response)
-            $("#posted").removeClass("d-none")
+            $("#posted").css("display", "block")
         })
     }
 })

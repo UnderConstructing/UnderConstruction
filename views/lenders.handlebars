@@ -1,10 +1,12 @@
 <div class="lender-page">
     <h1 class="lenders">Here are the lenders who can help you!</h1>
-    {{#each lenders}}
-    <h3 class="values">{{dataValues.company}}</h3>
-    <p>{{dataValues.email}}</p>
-    <p>{{dataValues.phone}}</p>
-    {{/each}}
+    <div class="values">
+        {{#each lenders}}
+        <h3>{{dataValues.company}}</h3>
+        <p>{{dataValues.email}}</p>
+        <p>{{dataValues.phone}}</p>
+        {{/each}}
+    </div>
     <div class="hmBtn">
         <a href="/"><button id="home">Go home</button></a>
     </div>
