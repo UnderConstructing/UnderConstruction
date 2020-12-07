@@ -1,13 +1,17 @@
 $("#submission").on("click", function () {
     if ($("#city").val()=== "In which city you located?") {
         openModal();
+        return
     }
     if ($("#state").val()=== "Which state are you in?") {
         openModal();
+        return
     }
     if ($("project").val()=== "What project are you trying to remodel?") {
         openModal();
+        return
     }
+    else {
     var cleCon = {
         city: $("#city").val(),
         project: $("#project").val()
@@ -20,7 +24,7 @@ $("#submission").on("click", function () {
     }).then(res => {
         console.log(res)
         window.location.href = "/results"
-    })
+    })}
 })
 $("#lenders").on("click", function () {
     $.ajax({
