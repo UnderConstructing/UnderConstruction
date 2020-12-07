@@ -5,29 +5,29 @@ $("#submission").on("click", function () {
         $("#validate").addClass("is-active");
         return
     }
-    else if ($("#state").val()=== "What state are you in?") {
+    else if ($("#state").val() === "What state are you in?") {
         openModal();
         return
     }
-    else if ($("#project").val()=== "What is your project?") {
+    else if ($("#project").val() === "What is your project?") {
         openModal();
         return
     }
     else {
-    var cleCon = {
-        city: $("#city").val(),
-        project: $("#project").val()
-    }
-    console.log(cleCon.project)
-    $.ajax({
-        url: "/api/results",
-        method: "GET",
-        data: cleCon
-    }).then(res => {
-        console.log(res)
-        window.location.href = "/results"
-        switcheroo()
-     })
+        var cleCon = {
+            city: $("#city").val(),
+            project: $("#project").val()
+        }
+        console.log(cleCon.project)
+        $.ajax({
+            url: "/api/results",
+            method: "GET",
+            data: cleCon
+        }).then(res => {
+            console.log(res)
+            window.location.href = "/results"
+            switcheroo()
+        })
     }
 })
 
@@ -36,7 +36,7 @@ $("#lenders").on("click", function () {
     $.ajax({
         url: "/lenders",
         method: "GET"
-    }).then(response =>{
+    }).then(response => {
         console.log(response)
     })
 })
@@ -54,20 +54,21 @@ $("#submit-contractor").on("click", function () {
         return
     }
 
-    else if ($("#inputState").val()==='Choose...') {
+    else if ($("#inputState").val() === 'Choose...') {
         openModal2()
         return
     }
     else {
-    
-    $.ajax({
-        url: "/api/newcontractor",
-        method: "POST",
-        data: reqObj
-    }).then((response) => {
-        console.log("posted!" + res)
-        $("#posted").removeClass("d-none")
-    })}
+
+        $.ajax({
+            url: "/api/newcontractor",
+            method: "POST",
+            data: reqObj
+        }).then((response) => {
+            console.log("posted!" + response)
+            $("#posted").removeClass("d-none")
+        })
+    }
 })
 
 
