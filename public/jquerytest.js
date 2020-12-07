@@ -19,14 +19,14 @@ $("#submission").on("click", function () {
         project: $("#project").val()
     }
     console.log(cleCon.project)
-    // $.ajax({
-    //     url: "/api/results",
-    //     method: "GET",
-    //     data: cleCon
-    // }).then(res => {
-    //     console.log(res)
-    //     window.location.href = "/results"
-    //  })
+    $.ajax({
+        url: "/api/results",
+        method: "GET",
+        data: cleCon
+    }).then(res => {
+        console.log(res)
+        window.location.href = "/results"
+     })
     }
 })
 $("#lenders").on("click", function () {
@@ -47,7 +47,7 @@ $("#submit-contractor").on("click", function () {
         phone: $("#inputPhone").val(),
     }
     if ($(".valid").val() === "") {
-        openModal()
+        openModal2()
         return
     }
 
@@ -66,11 +66,23 @@ $("#close-modal").on("click", function () {
     closeModal()
 })
 
+$("#close-modal2").on("click", function () {
+    closeModal2()
+})
 function openModal() {
     $("#validate").addClass("is-active")
 }
 
 function closeModal() {
     $("#validate").removeClass("is-active")
+    console.log("modal closed!")
+}
+
+function openModal2() {
+    $("#validated").addClass("is-active")
+}
+
+function closeModal2() {
+    $("#validated").removeClass("is-active")
     console.log("modal closed!")
 }
