@@ -31,22 +31,7 @@ $("#submission").on("click", function () {
     }
 })
 
-function switcheroo() {
-    switch ($("projectID").val()){
-        case "Kitchen":
-            $("#projectResults").text("It costs about $150 per square foot to rennovate a kitchen.");
-        break
-        case "Bathroom":
-            $("#projectResults").text("It costs about $70 per square foot to rennovate a bathroom.");
-        break
-        case "Bedroom":
-            $("#projectResults").text("It costs about $20 per square foot to rennovate a bedroom.");
-        break
-        default:
-            console.log("Somethin' done goofed!")
-        break  
-        }
-}
+
 $("#lenders").on("click", function () {
     $.ajax({
         url: "/lenders",
