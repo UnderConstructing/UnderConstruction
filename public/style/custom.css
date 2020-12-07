@@ -120,3 +120,6 @@ right: -500px;
   font-family: 'Saira Stencil One', cursive;
   text-align: center;
 }
+.d-none {
+  display: none;
+}
