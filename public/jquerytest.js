@@ -1,13 +1,15 @@
 $("#submission").on("click", function () {
-    if ($("#city").val()=== "In which city you located?") {
+    console.log($("#city").val())
+    if ($("#city").val() === "In which city are you located?") {
+        console.log("city missin")
+        $("#validate").addClass("is-active");
+        return
+    }
+    else if ($("#state").val()=== "What state are you in?") {
         openModal();
         return
     }
-    if ($("#state").val()=== "Which state are you in?") {
-        openModal();
-        return
-    }
-    if ($("project").val()=== "What project are you trying to remodel?") {
+    else if ($("#project").val()=== "What is your project?") {
         openModal();
         return
     }
@@ -17,14 +19,15 @@ $("#submission").on("click", function () {
         project: $("#project").val()
     }
     console.log(cleCon.project)
-    $.ajax({
-        url: "/api/results",
-        method: "GET",
-        data: cleCon
-    }).then(res => {
-        console.log(res)
-        window.location.href = "/results"
-    })}
+    // $.ajax({
+    //     url: "/api/results",
+    //     method: "GET",
+    //     data: cleCon
+    // }).then(res => {
+    //     console.log(res)
+    //     window.location.href = "/results"
+    //  })
+    }
 })
 $("#lenders").on("click", function () {
     $.ajax({
