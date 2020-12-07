@@ -135,3 +135,6 @@ right: 20px;
     width: auto;
     height: 2000px;
 }
+.d-none {
+  display: none;
+}
