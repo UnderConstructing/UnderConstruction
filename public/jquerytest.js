@@ -51,16 +51,22 @@ $("#submit-contractor").on("click", function () {
         return
     }
 
-    else if ($("#inputState").val()==='Choose...')
+    else if ($("#inputState").val()==='Choose...') {
+        openModal2()
+        return
+    }
+    else {
+    
     $.ajax({
         url: "/api/newcontractor",
         method: "POST",
         data: reqObj
-    }).then(function () {
-        console.log("posted!")
+    }).then((response) => {
+        console.log("posted!" + res)
         $("#posted").removeClass("d-none")
-    })
+    })}
 })
+
 
 $("#close-modal").on("click", function () {
     closeModal()
