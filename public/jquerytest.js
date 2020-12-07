@@ -1,13 +1,15 @@
 $("#submission").on("click", function () {
-    if ($("#city").val()=== "In which city you located?") {
+    console.log($("#city").val())
+    if ($("#city").val() === "In which city are you located?") {
+        console.log("city missin")
+        $("#validate").addClass("is-active");
+        return
+    }
+    else if ($("#state").val()=== "What state are you in?") {
         openModal();
         return
     }
-    if ($("#state").val()=== "Which state are you in?") {
-        openModal();
-        return
-    }
-    if ($("project").val()=== "What project are you trying to remodel?") {
+    else if ($("#project").val()=== "What is your project?") {
         openModal();
         return
     }
@@ -24,7 +26,8 @@ $("#submission").on("click", function () {
     }).then(res => {
         console.log(res)
         window.location.href = "/results"
-    })}
+     })
+    }
 })
 $("#lenders").on("click", function () {
     $.ajax({
@@ -44,7 +47,7 @@ $("#submit-contractor").on("click", function () {
         phone: $("#inputPhone").val(),
     }
     if ($(".valid").val() === "") {
-        openModal()
+        openModal2()
         return
     }
 
@@ -63,11 +66,23 @@ $("#close-modal").on("click", function () {
     closeModal()
 })
 
+$("#close-modal2").on("click", function () {
+    closeModal2()
+})
 function openModal() {
     $("#validate").addClass("is-active")
 }
 
 function closeModal() {
     $("#validate").removeClass("is-active")
+    console.log("modal closed!")
+}
+
+function openModal2() {
+    $("#validated").addClass("is-active")
+}
+
+function closeModal2() {
+    $("#validated").removeClass("is-active")
     console.log("modal closed!")
 }
