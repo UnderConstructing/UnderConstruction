@@ -46,7 +46,7 @@ position: relative;
     color: white;
     background-color: black;
 }
-.results{
+.remodel{
     position: relative;
   left: 1px;
   top: 1px;
@@ -63,6 +63,18 @@ position: relative;
 .email{
     padding-left: 20px;
     list-style: none;
+}
+.remodel-style{
+  font-size: 30px;
+  font-family: 'Maitree', serif;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+.project-style{
+  font-size: 50px;
+  font-family: 'Saira Stencil One', cursive;
+  padding-left: 20px;
+  padding-right: 10px;
 }
 .phone{
     padding-left: 20px;
@@ -107,6 +119,18 @@ position: relative;
   justify-content: center;
 }
 #lender-button{
+  margin-left:3.5em;
+  margin-bottom: 10px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+padding-bottom: 15px;
+font-size: larger;
+position: relative;
+top: 20px;
+right: 20px;
+}
+.hmBtn{
   margin-left:3.5em;
   margin-bottom: 10px;
 display: flex;
