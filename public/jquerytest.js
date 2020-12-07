@@ -10,18 +10,17 @@ $("#submission").on("click", function () {
     }
     var cleCon = {
         city: $("#city").val(),
+        project: $("#project").val()
     }
+    console.log(cleCon.project)
     $.ajax({
-        url: "/results",
+        url: "/api/results",
         method: "GET",
         data: cleCon
-    }).then(response => {
-        console.log(response)
+    }).then(res => {
+        console.log(res)
+        window.location.href = "/results"
     })
-
-})
-$("#incrementer").on("click", function() {
-    incrementer += 1;
 })
 $("#lenders").on("click", function () {
     $.ajax({
@@ -29,8 +28,7 @@ $("#lenders").on("click", function () {
         method: "GET"
     }).then(response =>{
         console.log(response)
-        console.log(incrementer)
-    } )
+    })
 })
 
 $("#submit-contractor").on("click", function () {
@@ -62,5 +60,4 @@ function openModal() {
 function closeModal() {
     $("#validate").removeClass("is-active")
     console.log("modal closed!")
-
 }
