@@ -41,6 +41,7 @@ app.get("/api/newcontractor", function (req, res) {
   })
 })
 
+//comment
 
 app.get("/results", (req, res) => {
   db.contractors.findAll({
