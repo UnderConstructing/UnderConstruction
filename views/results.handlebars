@@ -1,14 +1,20 @@
-<div class="results-page">
-    <h1 class="results">So you are remodeling your...</h1>
-    <h2>{{project}}</h2>
+<h1>So you are remodeling your...</h1>
+<div>
+    <p id="projectId">{{project}}</p>
+    <p id="projectResults">
+
+    </p>
+</div>
     <br>
     {{#each contractors}}
-    <div class="resultsStyle">
-        <p class="results2">{{dataValues.company}}</p>
-        <ol>
-            <li class="email">{{dataValues.email}}</li>
-            <li class="phone">{{dataValues.phone}}</li>
-        </ol>
+    <p>{{company}}</p>
+    <ol>
+        <li>{{email}}</li>
+        <li>{{phone}}</li>
+    </ol>
+</div>
+
+{{/each}}
     </div>
     {{/each}}
     <div id="lender-button">
@@ -23,3 +29,5 @@
     </div>
 </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="buttons.js"></script>

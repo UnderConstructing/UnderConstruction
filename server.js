@@ -1,6 +1,7 @@
 const express = require("express")
 const routes = require("./routes/router.js")
 const app = express();
+var router = express.Router()
 const dotenv = require("dotenv")
 const result = dotenv.config()
 if (result.error) {
@@ -11,6 +12,7 @@ const PORT = process.env.PORT || 8080;
 //SERIOUSLY//
 const exphbs = require("express-handlebars")
 const db = require("./models");
+const { response } = require("express");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -18,7 +20,6 @@ app.use(express.json());
 app.use(express.static("public"));
 
 console.log(PORT)
-console.log(process.env.HOST_NAME)
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 // app.use(routes)
@@ -42,22 +43,40 @@ app.get("/api/newcontractor", function (req, res) {
 })
 
 
-app.get("/results", (req, res) => {
-  db.contractors.findAll({
-    attributes: {
-      city: req.query.city
-    }
-  }).then(result => {
-    console.log(result)
-    res.render("results", { contractors: result })
+let contractorsRender = []
+let project = ""
+
+
+app.get("/results", function (req, res) {
+  res.render("results", {
+    contractors: contractorsRender,
+    project: project
   })
-    .catch(error => console.error(error))
 })
+
+app.get("/api/results", function (req, res) {
+      console.log(`THE REQUEST ${req.query.city}`)
+      db.contractors.findAll({
+        where: {
+          city: req.query.city
+        },
+        raw: true
+  }).then(results => {
+    console.log("results" + JSON.stringify(results))
+    contractorsRender = results
+    project = req.query.project
+    console.log(contractorsRender)
+    res.redirect(resultURL, 200)
+    console.log("CONTRACTORS " + JSON.stringify(contractorsRender))
+  })
+})
+
+const resultURL = "/results"
 
 app.get("/lenders", (req, res) => {
   db.finance.findAll({
   }).then(result => {
-    console.log(result)
+    console.log("LENDERS PAGE " + JSON.stringify(contractorsRender))
     res.render("lenders", { lenders: result })
   })
     .catch(error => console.error(error))
@@ -73,7 +92,8 @@ app.post("/api/newcontractor", function (req, res) {
     city: req.body.city,
     con_state: req.body.state,
     phone: req.body.phone
-  }).then(()=> {
+  }).then(response=> {
+    console.log(response)
     res.json()
   })
 })
