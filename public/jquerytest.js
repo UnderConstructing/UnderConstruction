@@ -26,9 +26,12 @@ $("#submission").on("click", function () {
     }).then(res => {
         console.log(res)
         window.location.href = "/results"
+        switcheroo()
      })
     }
 })
+
+
 $("#lenders").on("click", function () {
     $.ajax({
         url: "/lenders",
@@ -92,3 +95,4 @@ function closeModal2() {
     $("#validated").removeClass("is-active")
     console.log("modal closed!")
 }
+
