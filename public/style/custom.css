@@ -79,6 +79,7 @@ position: relative;
   border: 15px solid orange;
   padding: 50px;
   margin: 20px; 
+  margin-right: -30px;
 }
 .lenders{
     position: relative;
@@ -104,11 +105,18 @@ position: relative;
   flex-direction: row;
   justify-content: center;
 }
-.affiliate{
-    margin-left:3.5em;
-    margin-top: 2em;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+#lender-button{
+  margin-left:3.5em;
+display: flex;
+flex-direction: row;
+justify-content: center;
+padding-bottom: 10px;
+font-size: larger;
+position: relative;
+top: -400px;
+right: -500px;
+}
+.lender-style{
+  font-family: 'Saira Stencil One', cursive;
+  text-align: center;
 }
