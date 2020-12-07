@@ -98,6 +98,19 @@ app.post("/api/newcontractor", function (req, res) {
   })
 })
 
+app.get("/newlender", function (req, res){
+  db.finance.create({
+    company: "Golden Oak Lending",
+    email: "info@goldenoaklending.com",
+    city: "Pittsburgh",
+    con_state: "Pennsylvania",
+    phone: "(724) 779-4653",
+    website: "https://www.goldenoaklending.com/pittsburgh-mortgage-company.html",
+  }).then(response => {
+    console.log("hit")
+    res.json(response)
+  })
+})
 
 db.sequelize.sync({ force: false }).then(function () {
   app.listen(PORT, function () {

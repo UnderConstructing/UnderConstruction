@@ -1,4 +1,11 @@
-<h1 class="lenders">Here are the lenders who can help you!</h1>
-{{#each lenders}}
-<p class="values">{{dataValues.company}}</p>
-{{/each}}
+<div class="lender-page">
+    <h1 class="lenders">Here are the lenders who can help you!</h1>
+    {{#each lenders}}
+    <div class="values">
+        <h3>{{dataValues.company}}</h3>
+            <p>{{dataValues.website}}</p>
+            <p>{{dataValues.email}}</p>
+            <p>{{dataValues.phone}}</p>
+    </div>
+    {{/each}}
+</div>
