@@ -42,8 +42,10 @@ app.get("/api/newcontractor", function (req, res) {
   })
 })
 
+
 let contractorsRender = []
 let project = ""
+
 
 app.get("/results", function (req, res) {
   res.render("results", {
