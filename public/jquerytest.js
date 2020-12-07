@@ -1,27 +1,33 @@
 $("#submission").on("click", function () {
-    if ($("#city").val()=== "In which city you located?") {
-        openModal();
+    console.log($("#city").val())
+    if ($("#city").val() === "In which city are you located?") {
+        console.log("city missin")
+        $("#validate").addClass("is-active");
+        return
     }
-    if ($("#state").val()=== "Which state are you in?") {
+    else if ($("#state").val()=== "What state are you in?") {
         openModal();
+        return
     }
-    if ($("project").val()=== "What project are you trying to remodel?") {
+    else if ($("#project").val()=== "What is your project?") {
         openModal();
+        return
     }
+    else {
     var cleCon = {
         city: $("#city").val(),
+        project: $("#project").val()
     }
+    console.log(cleCon.project)
     $.ajax({
-        url: "/results",
+        url: "/api/results",
         method: "GET",
         data: cleCon
-    }).then(response => {
-        console.log(response)
-    })
-
-})
-$("#incrementer").on("click", function() {
-    incrementer += 1;
+    }).then(res => {
+        console.log(res)
+        window.location.href = "/results"
+     })
+    }
 })
 $("#lenders").on("click", function () {
     $.ajax({
@@ -29,8 +35,7 @@ $("#lenders").on("click", function () {
         method: "GET"
     }).then(response =>{
         console.log(response)
-        console.log(incrementer)
-    } )
+    })
 })
 
 $("#submit-contractor").on("click", function () {
@@ -41,6 +46,12 @@ $("#submit-contractor").on("click", function () {
         state: $("#inputState").val(),
         phone: $("#inputPhone").val(),
     }
+    if ($(".valid").val() === "") {
+        openModal2()
+        return
+    }
+
+    else if ($("#inputState").val()==='Choose...')
     $.ajax({
         url: "/api/newcontractor",
         method: "POST",
@@ -55,6 +66,9 @@ $("#close-modal").on("click", function () {
     closeModal()
 })
 
+$("#close-modal2").on("click", function () {
+    closeModal2()
+})
 function openModal() {
     $("#validate").addClass("is-active")
 }
@@ -62,5 +76,13 @@ function openModal() {
 function closeModal() {
     $("#validate").removeClass("is-active")
     console.log("modal closed!")
+}
 
+function openModal2() {
+    $("#validated").addClass("is-active")
+}
+
+function closeModal2() {
+    $("#validated").removeClass("is-active")
+    console.log("modal closed!")
 }
