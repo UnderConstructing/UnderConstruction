@@ -40,7 +40,7 @@ $("#lenders").on("click", function () {
         console.log(response)
     })
 })
-
+//comment//
 $("#submit-contractor").on("click", function () {
     let reqObj = {
         company: $("#inputCompany").val(),
