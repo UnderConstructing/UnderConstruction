@@ -1,6 +1,8 @@
 <div class="lender-page">
     <h1 class="lenders">Here are the lenders who can help you!</h1>
     {{#each lenders}}
-    <p class="values">{{dataValues.company}}</p>
+    <h3 class="values">{{dataValues.company}}</h3>
+    <p>{{dataValues.email}}</p>
+    <p>{{dataValues.phone}}</p>
     {{/each}}
 </div>
