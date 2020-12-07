@@ -1,12 +1,12 @@
-<h1 class="results">So you are remodeling your...</h1>
-<h2>{{project}}</h2>
-<br>
-{{#each contractors}}
-<div class="resultsStyle">
-    <p class="results2">{{dataValues.company}}</p>
+
+<h1>So you are remodeling your...</h1>
+    {{project}}
+    <br>
+    {{#each contractors}}
+    <p>{{company}}</p>
     <ol>
-        <li class="email">{{dataValues.email}}</li>
-        <li class="phone">{{dataValues.phone}}</li>
+        <li>{{email}}</li>
+        <li>{{phone}}</li>
     </ol>
 </div>
 {{/each}}
