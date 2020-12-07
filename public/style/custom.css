@@ -125,13 +125,14 @@ right: 20px;
 }
 .results-page{
   background-color: darkorange;
+  position: relative;
   margin: auto 10px;
     width: auto;
-    height: 2000px;
+    height: auto;
 }
 .lender-page{
   background-color: darkorange;
   margin: auto 10px;
     width: auto;
-    height: 2000px;
+    height: auto;
 }
